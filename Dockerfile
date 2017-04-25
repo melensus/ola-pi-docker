@@ -4,7 +4,7 @@ RUN echo "deb-src http://ftp.debian.org/debian jessie-backports main" >>  /etc/a
 && apt-get update && apt-get install devscripts \
 && apt-get build-dep ola
 
-RUN adduser olad \
+RUN adduser --disabled-password --gecos "" olad \
 && sudo -u olad apt-get -b source ola \
 && sudo debi
 
