@@ -1,6 +1,6 @@
 FROM resin/raspberry-pi3-debian:jessie
 
-RUN echo "deb http://apt.openlighting.org/raspbian jessie main" >>  /etc/apt/sources.list 
+RUN echo "deb http://apt.openlighting.org/raspbian wheezy main" >>  /etc/apt/sources.list 
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     less \
