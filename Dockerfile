@@ -2,7 +2,7 @@ FROM resin/raspberry-pi3-debian:jessie
 
 RUN echo "deb http://ftp.debian.org/debian jessie-backports main" >>  /etc/apt/sources.list \
 		&& apt-get update \
-		&& apt-get install -y apt-utils iptables
+		&& apt-get install -y apt-utils iptables \
 		&& apt-get install -t jessie-backports -y  ola
 
 RUN iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 9090
