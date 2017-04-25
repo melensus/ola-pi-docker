@@ -2,8 +2,9 @@ FROM resin/raspberry-pi3-debian:jessie
 
 RUN echo "deb-src http://ftp.debian.org/debian jessie-backports main" >>  /etc/apt/sources.list \
 && apt-get update && apt-get install devscripts \
-&& apt-get build-dep ola \
-&& adduser olad \
+&& apt-get build-dep ola
+
+RUN adduser olad \
 && sudo -u olad apt-get -b source ola \
 && sudo debi
 
