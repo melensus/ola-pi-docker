@@ -2,11 +2,7 @@ FROM resin/raspberry-pi3-debian:jessie
 
 RUN echo "deb-src http://ftp.debian.org/debian jessie-backports main" >>  /etc/apt/sources.list \
 && apt-get update && apt-get install devscripts \
-&& apt-get build-dep ola
-
-RUN adduser --disabled-password --gecos "" olad \
-&& sudo -u olad apt-get -b source ola \
-&& sudo debi
+&& apt-get install -t jessie-backports  ola
 
 COPY ola-config/ /etc/ola/
 
